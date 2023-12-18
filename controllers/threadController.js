@@ -34,8 +34,47 @@ const create = async (req, res) => {
   }
 };
 
+const destroy = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "No such thread" });
+  }
+
+  const thread = await Thread.findOneAndDelete({ _id: id });
+
+  if (!thread) {
+    return res.status(400).json({ error: "No such thread" });
+  }
+
+  res.status(200).json(thread);
+};
+
+const update = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "No such thread" });
+  }
+
+  const thread = await Thread.findOneAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
+
+  if (!thread) {
+    return res.status(400).json({ error: "No such thread" });
+  }
+
+  res.status(200).json(thread);
+};
+
 module.exports = {
   index,
   show,
   create,
+  destroy,
+  update,
 };
