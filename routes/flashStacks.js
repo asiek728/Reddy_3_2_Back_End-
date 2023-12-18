@@ -4,9 +4,9 @@ const router = express.Router()
 const flashStackController = require('../controllers/flashStackController')
 
 router.get('/', flashStackController.index)
-// router.post('/', moviesController.create)
-// router.get('/:id', moviesController.show)
-// router.delete('/:id', moviesController.destroy)
-// router.patch('/:id', moviesController.update)
+router.post('/', flashStackController.create)
+router.get('/:id', flashStackController.show)
+router.delete('/:id', flashStackController.destroy)
+router.patch('/:id', flashStackController.update)
 
 module.exports = router

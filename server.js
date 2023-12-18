@@ -9,14 +9,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const flashStackRoutes = require("./routes/flashStacks");
+
+const flashStackRoutes = require('./routes/flashStacks')
+const commentsRoutes = require('./routes/comments')
+
 
 const threadRoutes = require("./routes/thread");
 
 // routes
-app.get("/", (req, res) => {
-  res.json({ msg: "Welcome to the flash stacks app" });
-});
+
+app.get('/', (req, res) => {
+    res.json({ msg: 'Welcome to the flash stacks app' })
+})
+
+app.use('/flashStacks', flashStackRoutes)
+app.use('/comments', commentsRoutes)
+
 
 app.use("/flashStacks", flashStackRoutes);
 app.use("/thread", threadRoutes);
