@@ -16,7 +16,7 @@ const getComment = async (req, res) => {
         return res.status(404).json({error: 'Cannot find comment'})
     }
 
-    res.status(200)
+    res.status(200).json(comment)
 }
 
 const create = async (req, res) => {

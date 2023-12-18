@@ -3,10 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const flashStacksSchema = new Schema({
-    StackID: {
-        type: Number,
-        required: true,
-    },
     StudentID: {
         type: Number,
         required: true
