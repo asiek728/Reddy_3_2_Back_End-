@@ -3,7 +3,7 @@ const Comments = require('../models/Comments')
 
 
 const index = async (req, res) => {
-    const comment = await Comments.find({}).sort({ createdAt: -1 }) //descending order
+    const comment = await Comments.find({}).sort({ createdAt: -1 })
     res.status(200).json(comment)
 }
 
@@ -20,11 +20,11 @@ const getComment = async (req, res) => {
 }
 
 const create = async (req, res) => {
-    const { CommentID, ThreadID, StudentID, comment } = req.body
+    const { comment } = req.body
    // The IDs are hard coded need to fix later 
 
     try{
-        const newComment = await Comments.create({ CommentID, ThreadID, StudentID, comment })
+        const newComment = await Comments.create({ comment })
         res.status(200).json(newComment)
     } catch(err){
         res.status(400).json({ err: err.message})
