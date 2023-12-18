@@ -11,9 +11,8 @@ app.use(express.json());
 
 
 const flashStackRoutes = require('./routes/flashStacks')
+const flashCardRouters = require('./routes/flashCards')
 const commentsRoutes = require('./routes/comments')
-
-
 const threadRoutes = require("./routes/thread");
 
 // routes
@@ -23,6 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/flashStacks', flashStackRoutes)
+app.use('/flashCards', flashCardRouters)
 app.use('/comments', commentsRoutes)
 
 
