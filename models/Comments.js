@@ -4,16 +4,13 @@ const Schema = mongoose.Schema
 
 const commentsSchema = new Schema({
     CommentID: {
-        type: Number,
-        required: true,
+        type: Number
     },
     ThreadID: {
-        type: Number,
-        required: true
+        type: Number
     },
     StudentID: {
-        type: Number,
-        required: true
+        type: Number
     }, 
     comment: { 
         type: String,
