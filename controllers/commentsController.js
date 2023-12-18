@@ -16,7 +16,7 @@ const getComment = async (req, res) => {
         return res.status(404).json({error: 'Cannot find comment'})
     }
 
-    res.status(200)
+    res.status(200).json(comment)
 }
 
 const create = async (req, res) => {
@@ -31,10 +31,30 @@ const create = async (req, res) => {
     }
 }
  
+const deleteComment = async (req, res) => {
+    const { id } = req.params
+
+    try{
+    const deleteComment = await Comments.findByIdAndDelete({_id: id})
+    res.status(200).json(deleteComment)
+    } catch(err){
+        res.status(400).json({ err: err.message })
+    }
+}
+
+const updateComment = async (req, res) => {
+    const { id } = req.params
+
+    const updateComment = await Comments.findByIdAndUpdate({_id: id}, { ...req.body })
+
+    res.status(200).json(updateComment)
+}
 
 
 module.exports = {
     index,
     create,
-    getComment
+    getComment,
+    deleteComment,
+    updateComment
 }
