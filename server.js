@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const flashStackRoutes = require('./routes/flashStacks')
+const commentsRoutes = require('./routes/comments')
 
 
 // routes
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/flashStacks', flashStackRoutes)
+app.use('/comments', commentsRoutes)
 
 
 //connect to db
