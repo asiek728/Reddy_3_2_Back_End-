@@ -14,6 +14,7 @@ const flashStackRoutes = require('./routes/flashStacks')
 const flashCardRouters = require('./routes/flashCards')
 const commentsRoutes = require('./routes/comments')
 const threadRoutes = require("./routes/thread");
+const userRoutes = require('./routes/users')
 
 // routes
 
@@ -24,7 +25,8 @@ app.get('/', (req, res) => {
 app.use('/flashStacks', flashStackRoutes)
 app.use('/flashCards', flashCardRouters)
 app.use('/comments', commentsRoutes)
-app.use("/threads", threadRoutes);
+app.use("/threads", threadRoutes)
+app.use('/users', userRoutes)
 
 //connect to db
 mongoose
