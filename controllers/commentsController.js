@@ -10,7 +10,7 @@ const index = async (req, res) => {
 const getComment = async (req, res) => {
     const { id } = req.params
 
-    const comment = await Comments.findById(id)
+    const comment = await Comments.find({ ThreadID: id})
 
     if(!comment){
         return res.status(404).json({error: 'Cannot find comment'})
@@ -20,11 +20,11 @@ const getComment = async (req, res) => {
 }
 
 const create = async (req, res) => {
-    const { comment } = req.body
+    const { comment, ThreadID } = req.body
    // The IDs are hard coded need to fix later 
 
     try{
-        const newComment = await Comments.create({ comment })
+        const newComment = await Comments.create({ comment, ThreadID })
         res.status(200).json(newComment)
     } catch(err){
         res.status(400).json({ err: err.message})
@@ -35,7 +35,7 @@ const deleteComment = async (req, res) => {
     const { id } = req.params
 
     try{
-    const deleteComment = await Comments.findByIdAndDelete({_id: id})
+    const deleteComment = await Comments.findOneAndDelete({ThreadID : id})
     res.status(200).json(deleteComment)
     } catch(err){
         res.status(400).json({ err: err.message })
