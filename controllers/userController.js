@@ -5,6 +5,9 @@ require("dotenv").config();
 
 
 const createToken = (_id) => {
+  // const SECRET = uuidv4()
+  // return jwt.sign({_id}, SECRET, { expiresIn: '3d' })
+
   return jwt.sign({_id}, process.env.TEST_SECRET, { expiresIn: '3d' })
 }
 
@@ -36,4 +39,4 @@ const signupUser = async (req, res) => {
     }
   }
 
-module.exports = { signupUser, loginUser }
+module.exports = { signupUser, loginUser, createToken }

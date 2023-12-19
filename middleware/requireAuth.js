@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
 
-const { v4: uuidv4 } = require('uuid');
-
+// import { createToken } from '../controllers/userController'
+// const { SECRET } = createToken()
 
 const requireAuth = async (req, res, next) => {
 
@@ -15,6 +15,8 @@ const requireAuth = async (req, res, next) => {
   const token = authorization.split(' ')[1]
 
   try {
+    // const { _id } = jwt.verify(token, SECRET)
+
     const { _id } = jwt.verify(token, process.env.TEST_SECRET)
 
     req.user = await User.findOne({ _id }).select('_id')
