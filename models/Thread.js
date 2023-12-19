@@ -8,7 +8,8 @@ const threadSchema = new Schema(
       required: true,
     },
     Subject: {
-      type: String
+      type: String,
+      required: true
     },
     StudentID: {
       type: Number,
