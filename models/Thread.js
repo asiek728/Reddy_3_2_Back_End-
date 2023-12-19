@@ -7,10 +7,12 @@ const threadSchema = new Schema(
       type: String,
       required: true,
     },
+    Subject: {
+      type: String
+    },
     StudentID: {
       type: Number,
-      required: true,
-    },
+    }
   },
 
   {
