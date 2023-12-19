@@ -7,7 +7,7 @@ const flashCardSchema = new Schema({
         type: Number,
     },
     stackID: {
-        type: Number,
+        type: String,
         required: true
     },
     frontSide: {

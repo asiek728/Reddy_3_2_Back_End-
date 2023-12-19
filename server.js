@@ -24,10 +24,7 @@ app.get('/', (req, res) => {
 app.use('/flashStacks', flashStackRoutes)
 app.use('/flashCards', flashCardRouters)
 app.use('/comments', commentsRoutes)
-
-
-app.use("/flashStacks", flashStackRoutes);
-app.use("/thread", threadRoutes);
+app.use("/threads", threadRoutes);
 
 //connect to db
 mongoose
