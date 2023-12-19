@@ -8,7 +8,7 @@ const index = async (req, res) => {
 
 const getById = async (req, res) => {
     const { id } = req.params
-    const thisCard = await FlashCard.findById(id)
+    const thisCard = await FlashCard.find({ stackID: id })
 
     if(!thisCard){
         return res.status(404).json({error: "No such card"})

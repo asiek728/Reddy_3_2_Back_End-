@@ -7,10 +7,10 @@ const index = async (req, res) => {
 }
 
 const create = async (req, res) => {
-    const { StackID, StudentID, topic, cardCount, stackTimer } = req.body
+    const { StudentID, topic, cardCount, stackTimer } = req.body
 
     try {
-        const flashStack = await FlashStack.create({ StackID, StudentID, topic, cardCount, stackTimer })
+        const flashStack = await FlashStack.create({ StudentID, topic, cardCount, stackTimer })
         res.status(200).json(flashStack)
     } catch (error) {
         res.status(400).json({ error: error.message })
