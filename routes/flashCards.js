@@ -1,9 +1,14 @@
 const express = require('express')
-const router = express.Router()
 
 const flashCardController = require('../controllers/flashCardsController')
 
-router.get('/', flashCardController.index)
+const router = express.Router()
+
+// auth block for notes without token 
+const requireAuth = require('../middleware/requireAuth')
+router.use(requireAuth)
+
+router.get('/',  flashCardController.index)
 router.get('/:id', flashCardController.getById)
 router.post('/', flashCardController.createNewCard)
 router.patch('/:id', flashCardController.updateCard)

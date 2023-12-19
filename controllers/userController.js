@@ -1,10 +1,11 @@
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const { v4: uuidv4 } = require('uuid');
+require("dotenv").config();
+
 
 const createToken = (_id) => {
-  const SECRET = uuidv4();
-  return jwt.sign({_id}, SECRET, { expiresIn: '3d' })
+  return jwt.sign({_id}, process.env.TEST_SECRET, { expiresIn: '3d' })
 }
 
 const loginUser = async (req, res) => {
@@ -34,9 +35,5 @@ const signupUser = async (req, res) => {
       res.status(400).json({error: error.message})
     }
   }
-
-const logoutUser = async (req, res) => {
-    res.json('user logged out succesfully')
-}
 
 module.exports = { signupUser, loginUser }
