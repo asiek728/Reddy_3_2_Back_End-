@@ -11,7 +11,7 @@ const create = async (req, res) => {
 
     try {
         const flashStack = await FlashStack.create({ StudentID, topic, cardCount, stackTimer })
-        res.status(200).json(flashStack)
+        res.status(201).json(flashStack)
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
@@ -51,7 +51,7 @@ const update = async (req, res) => {
     }
 
     const flashStack = await FlashStack.findOneAndUpdate({ _id: id }, {
-        ...req.body
+        stackTimer: flashStacksSchema.updatedAt
     })
 
     if (!flashStack) {
