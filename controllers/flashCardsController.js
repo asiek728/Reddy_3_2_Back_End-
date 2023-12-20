@@ -19,7 +19,6 @@ const getById = async (req, res) => {
 
 const createNewCard = async (req, res) => {
     const {stackID, frontSide, backSide} = req.body
-    console.log("hit")
     try{
         const card = await FlashCard.create({stackID, frontSide, backSide,})
         res.status(200).json(card)
