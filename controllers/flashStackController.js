@@ -2,15 +2,19 @@ const mongoose = require('mongoose')
 const FlashStack = require('../models/FlashStacks')
 
 const index = async (req, res) => {
-    const flashStacks = await FlashStack.find({}).sort({ createdAt: -1 }) //descending order
+
+    const userID = req.user._id
+    const flashStacks = await FlashStack.find({ userID }).sort({ createdAt: -1 }) //descending order
     res.status(200).json(flashStacks)
 }
 
 const create = async (req, res) => {
-    const { StudentID, topic, cardCount, stackTimer } = req.body
+    const userID = req.user._id
+    const { StudentID, topic, cardCount, stackTimer} = req.body
+
 
     try {
-        const flashStack = await FlashStack.create({ StudentID, topic, cardCount, stackTimer })
+        const flashStack = await FlashStack.create({ StudentID, topic, cardCount, stackTimer, userID })
         res.status(200).json(flashStack)
     } catch (error) {
         res.status(400).json({ error: error.message })

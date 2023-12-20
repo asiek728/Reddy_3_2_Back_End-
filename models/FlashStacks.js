@@ -19,6 +19,10 @@ const flashStacksSchema = new Schema({
         type: Date,
         required: true
     },
+    userID: {
+        type: String,
+        required: true
+    }
 },
 
     {
