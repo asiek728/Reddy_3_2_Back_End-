@@ -11,7 +11,7 @@ const threadSchema = new Schema(
       type: String,
       required: true
     },
-    Token: {
+    Email: {
       type: String,
       required: true
     }

@@ -20,11 +20,10 @@ const getComment = async (req, res) => {
 }
 
 const create = async (req, res) => {
-    const { comment, ThreadID } = req.body
-   // The IDs are hard coded need to fix later 
+    const { comment, ThreadID, Email } = req.body
 
     try{
-        const newComment = await Comments.create({ comment, ThreadID })
+        const newComment = await Comments.create({ comment, ThreadID, Email })
         res.status(200).json(newComment)
     } catch(err){
         res.status(400).json({ err: err.message})

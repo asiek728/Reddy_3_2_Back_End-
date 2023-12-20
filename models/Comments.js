@@ -6,9 +6,10 @@ const commentsSchema = new Schema({
     ThreadID: {
         type: String
     },
-    StudentID: {
-        type: Number
-    }, 
+    Email: {
+        type: String,
+        required: true
+    },
     comment: { 
         type: String,
         required: true
