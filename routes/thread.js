@@ -3,6 +3,9 @@ const router = express.Router();
 
 const threadController = require("../controllers/threadController");
 
+const requireAuth = require('../middleware/requireAuth')
+router.use(requireAuth)
+
 router.get("/", threadController.index);
 router.post("/", threadController.create);
 router.get("/:id", threadController.show);
