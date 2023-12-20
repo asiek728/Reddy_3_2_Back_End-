@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const flashStacksSchema = new Schema({
     StudentID: {
-        type: Number,
+        type: String,
         required: true
     },
     topic: {
