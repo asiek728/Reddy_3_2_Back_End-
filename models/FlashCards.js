@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const flashCardSchema = new Schema({
+    StudentID: {
+        type: String,
+        required: true
+    },
     cardID: {
         type: Number,
     },
@@ -21,7 +25,7 @@ const flashCardSchema = new Schema({
     passed: {
         type: Boolean, 
         default: false
-    },
+    }
 },
 
     {

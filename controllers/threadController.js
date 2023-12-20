@@ -27,7 +27,8 @@ const create = async (req, res) => {
 
   // add to the database
   try {
-    const thread = await Thread.create({ Question, Subject });
+    const StudentID = req.user._id
+    const thread = await Thread.create({ Question, Subject, StudentID });
     res.status(200).json(thread);
   } catch (error) {
     res.status(400).json({ error: error.message });
