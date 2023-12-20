@@ -11,8 +11,9 @@ const threadSchema = new Schema(
       type: String,
       required: true
     },
-    StudentID: {
-      type: Number,
+    Token: {
+      type: String,
+      required: true
     }
   },
 

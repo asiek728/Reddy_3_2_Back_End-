@@ -23,11 +23,11 @@ const show = async (req, res) => {
 };
 
 const create = async (req, res) => {
-  const { Question, Subject } = req.body;
+  const { Question, Subject, Token } = req.body;
 
   // add to the database
   try {
-    const thread = await Thread.create({ Question, Subject });
+    const thread = await Thread.create({ Question, Subject, Token });
     res.status(200).json(thread);
   } catch (error) {
     res.status(400).json({ error: error.message });
