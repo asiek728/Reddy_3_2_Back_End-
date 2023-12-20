@@ -23,6 +23,7 @@ const flashStacksSchema = new Schema({
         type: String,
         required: true
     }
+    
 },
 
     {
