@@ -27,5 +27,32 @@ describe("endpoints for thread routes", () => {
       expect(res.body.length).toBeGreaterThan(0);
     });
 
+    it("should return a specific thread", async () => {
+      const res = await request(app).get("/threads/658402b0ff5a98ea531fdd34").set('Authorization', auth)
+      expect(res.statusCode).toBe(200)
+      expect(res.body).toEqual({
+        "_id": "658402b0ff5a98ea531fdd34",
+        "Question": "What factors effect the stock prices?",
+        "Subject": "Economics",
+        "Email": "low14@hotmail.com",
+        "createdAt": "2023-12-21T09:17:36.516Z",
+        "updatedAt": "2023-12-21T09:17:36.516Z",
+        "__v": 0
+      })
+    })
+
+    it("should create a thread", async () => {
+      const res = await request(app).post("/threads").set('Authorization', auth).send({
+        "Question": "How to become good at testing",
+        "Subject": "CS",
+        "Email": "test@test.com"
+      })
+      expect(res.statusCode).toBe(200)
+      expect(res.body.Subject).toBe("CS")
+    })
+
+    // it("should delete a thread", async () => {
+    //   const res = await request(app).delete("/threads/")
+    // })
 
 })
