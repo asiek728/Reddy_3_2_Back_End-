@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "nodemon -L server.js",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=5000"
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --watchAll --maxWorkers=1 --testTimeout=5000",
+    "coverage": "npx jest --coverage"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
