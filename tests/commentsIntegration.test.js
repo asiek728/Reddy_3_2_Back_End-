@@ -4,7 +4,7 @@ const app = require("../server");
 
 require("dotenv").config();
 
-const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2ODI4YWU4ZjIwN2YxNDE3OTgiLCJpYXQiOjE3MDMxNTU2ODgsImV4cCI6MTcwMzQxNDg4OH0.01YeTxm3IMojUk7EGaeyHVvcZ7ymSJlw3nzMNdf5AtA'
+const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2ODI4YWU4ZjIwN2YxNDE3OTgiLCJpYXQiOjE3MDMxNTYzNTMsImV4cCI6MTcwMzQxNTU1M30.BzmcbuKPPAm3pfXMakptyzEzPau-LonTlq0g9T-B4Ok'
 
 beforeEach(async () => {
   await mongoose.connect(process.env.DB_URL);

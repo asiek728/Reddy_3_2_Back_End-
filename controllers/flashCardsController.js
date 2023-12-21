@@ -21,7 +21,7 @@ const createNewCard = async (req, res) => {
     const {stackID, frontSide, backSide} = req.body
     try{
         const card = await FlashCard.create({stackID, frontSide, backSide,})
-        res.status(200).json(card)
+        res.status(201).json(card)
 
     }catch(error){
         res.status(400).json({error: error.message})
