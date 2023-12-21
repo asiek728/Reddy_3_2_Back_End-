@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const request = require("supertest");
 const app = require("../server");
 
-const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2ODI4YWU4ZjIwN2YxNDE3OTgiLCJpYXQiOjE3MDMxNTYzNTMsImV4cCI6MTcwMzQxNTU1M30.BzmcbuKPPAm3pfXMakptyzEzPau-LonTlq0g9T-B4Ok'
+const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2ODI4YWU4ZjIwN2YxNDE3OTgiLCJpYXQiOjE3MDMxNzExMDAsImV4cCI6MTcwMzQzMDMwMH0.MPKvTYX7W3Y9AohxjX7kDf8lTXa2ipEYYTdffXVgN38'
 
 require("dotenv").config();
 

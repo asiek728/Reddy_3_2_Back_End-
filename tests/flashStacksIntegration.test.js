@@ -4,7 +4,7 @@ const app = require("../server");
 
 require("dotenv").config();
 
-const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2ODI4YWU4ZjIwN2YxNDE3OTgiLCJpYXQiOjE3MDMxNTU2ODgsImV4cCI6MTcwMzQxNDg4OH0.01YeTxm3IMojUk7EGaeyHVvcZ7ymSJlw3nzMNdf5AtA'
+const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2ODI4YWU4ZjIwN2YxNDE3OTgiLCJpYXQiOjE3MDMxNzExMDAsImV4cCI6MTcwMzQzMDMwMH0.MPKvTYX7W3Y9AohxjX7kDf8lTXa2ipEYYTdffXVgN38'
 
 let server
 
@@ -43,7 +43,7 @@ describe("endpoints for flashStacks routes", () => {
         });
     })
 
-    it("should create a new flashStack with 200 status code", async() => {
+    it("should create a new flashStack with 201 status code", async() => {
         const res = await request(app).post("/flashStacks").set('Authorization', auth).send({
             "userID": "6584106828ae8f207f141798",
             "StudentID": "testing88@gmail.com",
@@ -51,7 +51,7 @@ describe("endpoints for flashStacks routes", () => {
             "cardCount": "0",
             "stackTimer": "2023-12-21T11:43:52.980Z"
         })
-        expect(res.statusCode).toBe(200)
+        expect(res.statusCode).toBe(201)
         expect(res.body.topic).toBe("CS")
     })
 
