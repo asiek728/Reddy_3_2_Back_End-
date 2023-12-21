@@ -15,7 +15,7 @@ const create = async (req, res) => {
 
     try {
         const flashStack = await FlashStack.create({ StudentID, topic, cardCount, stackTimer, userID })
-        res.status(200).json(flashStack)
+        res.status(201).json(flashStack)
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
