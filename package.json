@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nodemon -L server.js",
+    "dev": "nodemon -L index.js",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles --watchAll --maxWorkers=1 --testTimeout=5000",
     "coverage": "npx jest --coverage"
   },
