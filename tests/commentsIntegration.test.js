@@ -6,15 +6,21 @@ require("dotenv").config();
 
 const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2ODI4YWU4ZjIwN2YxNDE3OTgiLCJpYXQiOjE3MDMxNTYzNTMsImV4cCI6MTcwMzQxNTU1M30.BzmcbuKPPAm3pfXMakptyzEzPau-LonTlq0g9T-B4Ok'
 
+
+let server
+
 beforeEach(async () => {
+  server = app.listen(process.env.PORT)
   await mongoose.connect(process.env.DB_URL);
 });
 
 afterEach(async () => {
   await mongoose.connection.close();
+  await server.close()
 });
 
-describe("endpoints for comments routes should return with 200 status code", () => {
+
+describe("endpoints for comments routes", () => {
   it("should return all comments", async () => {
     const res = await request(app).get("/comments").set('Authorization', auth);
     expect(res.statusCode).toBe(200);
@@ -40,9 +46,9 @@ describe("endpoints for comments routes should return with 200 status code", () 
   })
 
   it("should delete a comment with 200 status code", async () => {
-    const res = await request(app).delete("/comments/:65830e45fd5c51b1fdb673cd").set('Authorization', auth)
+    const res = await request(app).delete("/comments/658402b0ff5a98ea531fdd34").set('Authorization', auth)
     expect(res.statusCode).toBe(200)
-    expect(res.body).toEqual(null); 
+    expect(res.body).toEqual({}); 
 
   })
 
