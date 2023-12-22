@@ -67,11 +67,11 @@ npm run dev #this will start the application and make it live
 - Testing the front end and back end everyday
 
 # Screenshots/Images
-![login](./screenshots/login.png)
-![homepage](./screenshots/homepage.png)
-![flashstack](./screenshots/flashstack.png)
-![flashcard](./screenshots/flashcard.png)
-![forum](./screenshots/forum.png)
+![login](./screenshots/login.PNG)
+![homepage](./screenshots/homepage.PNG)
+![flashstack](./screenshots/flashstack.PNG)
+![flashcard](./screenshots/flashcard.PNG)
+![forum](./screenshots/forum.PNG)
 
 # Wins & Challenges
 ## Wins
