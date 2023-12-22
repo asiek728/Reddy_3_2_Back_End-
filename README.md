@@ -57,6 +57,7 @@ npm run dev #this will start the application and make it live
 - React
 - Mongoose
 - Express
+- Node.js
 
 # Process
 - Brainstorming and posting all our ideas to figma board
@@ -66,28 +67,32 @@ npm run dev #this will start the application and make it live
 - Testing the front end and back end everyday
 
 # Screenshots/Images
-- add images
+![login](./screenshots/login.png)
+![homepage](./screenshots/homepage.png)
+![flashstack](./screenshots/flashstack.png)
+![flashcard](./screenshots/flashcard.png)
+![forum](./screenshots/forum.png)
 
 # Wins & Challenges
-
 ## Wins
+- Learning how to use React and Mongoose
+- Learning how to Test and add User Authentication
 
 ## Chalenges
 - Getting the flashcard only belonging to a specific user
 - Back end testing with authorization involved
 
-# Bugs
-
 # Future features
+- Sharing flashcards with other users
+- Adding difficulty levels to each flashcard
+- Adding timer to each flashcard
 
-# Important Paths
 # Important Paths
 - /flashStacks          - get all stacks with flashcards
 - /flashStacks/:id      - get all flashcards for a stack with the specific id
 - /flashCards           - get all flashcards
 - /flashCards/:id       - get flashcard with a specific id
-
-- /comments
-- /threads
-- /users
-
+- /comments             - get all comments
+- /comments/:id         - get comment with a specific id
+- /threads              - get all threads
+- /threads/:id          - get thread with a specific id
