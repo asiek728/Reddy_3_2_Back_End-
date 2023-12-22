@@ -1,5 +1,6 @@
 # Reddy_3_2_Back_End-
-The API lets you 
+This website allows the user to create and revise their flashcards. It also has a forum where users can other users ask questions.
+
 
 # Installation & usage
 ## Instalation
@@ -16,7 +17,7 @@ git https://github.com/asiek728/Reddy_3_2_Back_End-
 ```
 Once you have created it, \\\`.env`\\\ open it
 
-4. Go to Mongo DB: 
+3. Go to Mongo DB: 
 
 ```sh
 'https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_general_retarget-brand_gic-null_emea-all_ps-all_desktop_eng_lead&utm_term=mongodb%20setup&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=14412646458&adgroup=151115417935&cq_cmp=14412646458&gad_source=1&gclid=EAIaIQobChMIvp208NuigwMVYpNQBh0jhwB4EAAYASAAEgI4lvD_BwE'
@@ -34,7 +35,7 @@ and make an account. You will then need to click 'Create new account'.
 
 \\\ Coppy the URL that begins with 'postgres://...'
 
-5. Inside the `.env`  folder paste the following WITH the DB_URL being equal to the Mongo DB one you have created:
+4. Inside the `.env`  folder paste the following WITH the DB_URL being equal to the Mongo DB one you have created:
 
 - `DB_URL=mongodb+srv://...`
 - `PORT=3000`
