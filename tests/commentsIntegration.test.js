@@ -10,7 +10,7 @@ const auth = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MTA2OD
 let server
 
 beforeEach(async () => {
-  server = app.listen(process.env.PORT)
+  server = app.listen(process.env.PORT +2)
   await mongoose.connect(process.env.DB_URL);
 });
 
