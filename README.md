@@ -49,12 +49,6 @@ npm run dev #this will start the application and make it live
 ```
 6. The server will now be running on the port listed in the console - It should be 3000.  
 
-### .env file
-.env file should have the following data:
-PORT
-DB_URL
-SALT
-TEST_SECRET
 
 # Technologies used
 - HTML
